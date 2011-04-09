@@ -1,4 +1,5 @@
 name: CriticalHits
 author: videege
 main:  com.barronsoftware.videege.CriticalHits.CriticalHits
+description: Allows for configuration of critical hits on an item-by-item basis.
 version: 0.1

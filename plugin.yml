@@ -1,0 +1,4 @@
+name: CriticalHits
+author: videege
+main:  com.barronsoftware.videege.CriticalHits.CriticalHits
+version: 0.1

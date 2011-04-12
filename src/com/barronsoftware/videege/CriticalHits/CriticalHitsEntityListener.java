@@ -21,19 +21,17 @@ public class CriticalHitsEntityListener extends EntityListener {
 				Player damager = (Player) edee.getDamager();
 				//see if the item in the damager's hand is a crit item
 				int itemType = damager.getItemInHand().getTypeId();
-				CriticalItem critItem = plugin.getCriticalItem(itemType);
+				CriticalItem critItem = plugin.getCriticalItem(itemType, damager);
 				if (critItem != null) {
-					//roll for a crit, as it were
 					if (critItem.isCriticalHit()) {
-						//critical hit
-						edee.setDamage(critItem.getCriticalDamage());
+						edee.setDamage(critItem.getCriticalDamage(edee.getDamage()));
 						if (plugin.notifyOnCrit) {
 							damager.sendMessage(ChatColor.GREEN + "[CriticalHits] " + ChatColor.WHITE + " You scored a critical hit!");
 						}
 					}
 					else {
 						//base hit
-						edee.setDamage(critItem.getBaseDamage());
+						edee.setDamage(critItem.getBaseDamage(edee.getDamage()));
 					}
 				}
 			}
